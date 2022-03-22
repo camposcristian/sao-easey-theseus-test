@@ -1,7 +1,6 @@
-// import extendTheme from '@/theme/_generated';
+// import { theme, extendTheme } from '@chakra-ui/react';
 import theme from '@/theme/_generated';
 import { extendTheme } from '@chakra-ui/react';
-// import extendTheme from '@/theme/_generated';
 import { button } from './components';
 import styles from './styles';
 
