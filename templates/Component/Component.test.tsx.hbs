@@ -1,0 +1,14 @@
+import React from 'react';
+
+import { render, screen } from '@/utils/testing';
+
+import {{name}} from './{{name}}';
+
+describe('{{name}}', () => {
+  test('renders', () => {
+    const testId = 'test';
+    render(<{{name}} data-testid={testId} />);
+
+    screen.getByTestId(testId);
+  });
+});

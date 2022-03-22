@@ -1,0 +1,55 @@
+import React from 'react';
+import { Flex, Heading } from '@chakra-ui/react';
+import type {
+  NextPage,
+  // GetServerSideProps,
+  GetStaticProps,
+} from 'next';
+
+// import { Page } from '@/components/pages';
+import generateMetaTags from '@/utils/meta';
+
+type Props = {
+  timestamp: number;
+};
+
+const {{name}}: NextPage<Props> = ({ timestamp }) => {
+  return (
+    <>
+      {generateMetaTags({ title: 'TODO' })}
+      <Flex role="main">
+        <Heading as="h1">{timestamp}</Heading>
+      </Flex>
+    </>
+  );
+};
+
+// Static generation (pre-render page at build time)
+// https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const timestamp = new Date().getTime();
+  return {
+    props: { timestamp },
+  };
+};
+
+// Incremental static regeneration (pre-render page in the background as traffic comes in)
+// https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const timestamp = new Date().getTime();
+//   return {
+//     props: { timestamp },
+//     revalidate: 1,
+//   };
+// };
+
+// Server-side rendering (pre-render page on every request)
+// https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
+// export const getServerSideProps: GetServerSideProps<Props> = async () => {
+//   const timestamp = new Date().getTime();
+//   return {
+//     props: { timestamp },
+//   };
+// };
+
+export default {{name}};
