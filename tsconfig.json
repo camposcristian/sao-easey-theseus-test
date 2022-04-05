@@ -21,7 +21,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
